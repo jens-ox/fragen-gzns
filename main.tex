@@ -1,0 +1,32 @@
+\documentclass[ngerman]{latex-classes/summary}
+
+\title{Fragen zu Gehirn und ZNS}
+\author{Jens Ochsenmeier}
+
+\usepackage{enumitem}
+\newlist{checklist}{itemize}{2}
+\setlist[checklist]{label=\( \square \)}
+
+\let\ifbolditem\iffalse
+\def\bolditemtrue{\global\let\ifbolditem\iftrue}
+\def\bolditemfalse{\global\let\ifbolditem\iffalse}
+\newenvironment{benumerate}
+  {\def\bolditem{\bolditemtrue\item}%
+   \enumerate
+   \renewcommand\makelabel[1]{\hss\llap{\ifbolditem\bfseries\fi##1\bolditemfalse}}}
+  {\endenumerate}
+
+\newcommand{\checkedbox}{\makebox[0pt][l]{$\square$}$\times$}
+
+\begin{document}
+
+\input{chapters/01_Ueberblick.tex}
+\input{chapters/02_MotorikSensorik.tex}
+\input{chapters/03_Sinnesorgane.tex}
+\input{chapters/04_Gehirnfunktionen.tex}
+\input{chapters/05_Neurodiagnostik.tex}
+\input{chapters/06_Krankheitsbilder.tex}
+\input{chapters/07_Therapie.tex}
+\input{chapters/08_Neuronavigation.tex}
+
+\end{document}
